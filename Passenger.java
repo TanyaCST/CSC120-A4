@@ -5,4 +5,8 @@ public class Passenger {
     public Passenger(String name) {
         this.name = name;
     }
+
+    public void boardCar(Car c){
+        c.addPassenger(this);
+    }
 }
