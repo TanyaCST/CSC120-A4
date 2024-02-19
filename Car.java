@@ -61,14 +61,14 @@ public class Car {
         }
     }
     
-    public static void main(String[] args) {
-        Car myCar = new Car(50);
-        System.out.println(myCar.getCapacity());
-        myCar.addPassenger(null);
-        myCar.removePassenger(null);
-        myCar.printManifest();
+    //public static void main(String[] args) {
+      //  Car myCar = new Car(50);
+        //System.out.println(myCar.getCapacity());
+        //myCar.addPassenger(null);
+        //myCar.removePassenger(null);
+        //myCar.printManifest();
 
-    }
+    //}
     
 
 }

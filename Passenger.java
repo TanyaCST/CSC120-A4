@@ -7,6 +7,17 @@ public class Passenger {
     }
 
     public void boardCar(Car c){
-        c.addPassenger(this);
+        //c.addPassenger(this);
+        if(c.addPassenger(this) == true){
+            c.addPassenger(this);
+        }
     }
+
+    public void getOffCar(Car c){
+        if(c.removePassenger(this) == true){
+            c.removePassenger(this);
+        }
+    }
+
+
 }
