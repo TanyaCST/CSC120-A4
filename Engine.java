@@ -1,5 +1,5 @@
 public class Engine {
-    double currentLevel;
+    private double currentLevel;
     double maxLevel;
     FuelType fuelType;
 
@@ -9,21 +9,26 @@ public class Engine {
 
     }
 
-    public void refuel(double currentLevel, double maxLevel){
-        // The goal of this method is to reset the current level of fuel when it doesn't reach the max level.
-        // No returns needed. 
+    /**
+     * Reset the current level when it is lowerer than the max level
+     * @param currentLevel: current level of fuel
+     * @param maxLevel: the maxium level of fuel
+     */
+    public void refuel(double currentLevel, double maxLevel){ 
         if(currentLevel != maxLevel){
-            currentLevel = maxLevel;
+            this.currentLevel = maxLevel;
         }
         
     }
 
+    /**
+     * Decrease the current fuel level
+     * @return T/F: Is the current fuel level above 0?
+     */
     public boolean go(){
-        // will decrease the current fuel level
-        currentLevel -= 10;
+        this.currentLevel -= 10;
 
-        // print some useful information (e.g. remaining fuel level)
-        // return `True` if the fuel level is above 0 and `False` otherwise
+        // print some useful information (e.g. remaining fuel level) if possible
         if (currentLevel > 0) {
             return(true);
         }

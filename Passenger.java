@@ -6,8 +6,11 @@ public class Passenger {
         this.name = name;
     }
 
+    /**
+     * Call `c.addPassenger(this)` to board a given `Car`
+     * @param c the car
+     */
     public void boardCar(Car c){
-        //c.addPassenger(this);
         if(c.addPassenger(this) == true){
             c.addPassenger(this);
         }

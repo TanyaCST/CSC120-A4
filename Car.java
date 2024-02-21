@@ -1,28 +1,38 @@
 import java.util.ArrayList;
 
-
 public class Car {
-    int maxCapacity;
-
-    // An `ArrayList` where it will store the `Passenger`s currently onboard
-    ArrayList<Passenger> currentOnboard = new ArrayList<Passenger>();
+    int maxCapacity = 50;
+    private ArrayList<Passenger> currentOnboard = new ArrayList<Passenger>();
 
     public Car(int capacityMax){
         currentOnboard = new ArrayList<Passenger>(capacityMax);
         
     }
 
+    /**
+     * Return the max capacity of a car
+     * @return int maxCapacity
+     */
     public int getCapacity(){
         return maxCapacity;
 
     }
 
+    /**
+     * Return the seats remaining in a car
+     * @return int seats remaining
+     */
     public int seatsRemaining(){
         int seatsRemaing = maxCapacity - currentOnboard.size();
         return seatsRemaing;
         
     }
 
+    /**
+     * Add a `Passenger` from the `Car`
+     * @param p: a passenger
+     * @return T/F Is the operation successful?
+     */
     public boolean addPassenger(Passenger p){
         int seatsRemaing = seatsRemaining();
         if(seatsRemaing > 0){
@@ -40,6 +50,11 @@ public class Car {
         }
     }
 
+    /**
+     * Remove a `Passenger` from the `Car` 
+     * @param p: a passenger
+     * @return T/F Is the operation successful?
+     */
     public boolean removePassenger(Passenger p){
         currentOnboard.remove(p);
 
@@ -52,7 +67,10 @@ public class Car {
         }
     }
 
-    private void printManifest(){
+    /**
+     * Print out a list of all Passengers aboard the car/"This car is EMPTY."
+     */
+    public void printManifest(){
         if(seatsRemaining() == maxCapacity){
             System.out.println("This car is EMPTY.");
         }
@@ -60,15 +78,6 @@ public class Car {
             System.out.println(currentOnboard);
         }
     }
-    
-    //public static void main(String[] args) {
-      //  Car myCar = new Car(50);
-        //System.out.println(myCar.getCapacity());
-        //myCar.addPassenger(null);
-        //myCar.removePassenger(null);
-        //myCar.printManifest();
-
-    //}
     
 
 }
