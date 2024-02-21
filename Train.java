@@ -6,11 +6,11 @@ public class Train {
 
     public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity){
         //initialize the `Engine` and `Car`s and store them
-        engine = new Engine(fuelType, passengerCapacity);
+        this.engine = new Engine(fuelType, passengerCapacity);
 
         for(int index = 0; index < nCars; index ++){
             Car car = new Car(passengerCapacity);
-            carAttached.add(car);
+            this.carAttached.add(car);
         }
 
     }
@@ -62,8 +62,13 @@ public class Train {
         return totalSeatsRemain;
     }
 
+    /**
+     * Print a roster of all Passengers onboard
+     */
     public void printManifest(){
-        
+        for(int i = 0; i < carAttached.size(); i++){
+            this.carAttached.get(i).printManifest();
+        }
         
     }
 }

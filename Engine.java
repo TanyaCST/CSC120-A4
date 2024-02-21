@@ -4,8 +4,8 @@ public class Engine {
     FuelType fuelType;
 
     public Engine(FuelType fuel, double levelInput){
-        fuelType = fuel;
-        currentLevel = levelInput;
+        this.fuelType = fuel;
+        this.currentLevel = levelInput;
 
     }
 

@@ -7,8 +7,8 @@ public class Passenger {
     }
 
     /**
-     * Call `c.addPassenger(this)` to board a given `Car`
-     * @param c the car
+     * Call a passenger to board a given `Car`
+     * @param c the given car
      */
     public void boardCar(Car c){
         if(c.addPassenger(this) == true){
@@ -16,6 +16,10 @@ public class Passenger {
         }
     }
 
+    /**
+     * Call a passenger to get off from the given car
+     * @param c the given car
+     */
     public void getOffCar(Car c){
         if(c.removePassenger(this) == true){
             c.removePassenger(this);

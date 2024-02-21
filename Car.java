@@ -5,7 +5,7 @@ public class Car {
     private ArrayList<Passenger> currentOnboard = new ArrayList<Passenger>();
 
     public Car(int capacityMax){
-        currentOnboard = new ArrayList<Passenger>(capacityMax);
+        this.currentOnboard = new ArrayList<Passenger>(capacityMax);
         
     }
 
