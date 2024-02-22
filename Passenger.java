@@ -2,6 +2,10 @@ public class Passenger {
     
     private String name;
 
+    /**
+     * Constructor
+     * @param name: passenger's name
+     */
     public Passenger(String name) {
         this.name = name;
     }

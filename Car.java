@@ -4,8 +4,13 @@ public class Car {
     int maxCapacity = 50;
     private ArrayList<Passenger> currentOnboard = new ArrayList<Passenger>();
 
-    public Car(int capacityMax){
-        this.currentOnboard = new ArrayList<Passenger>(capacityMax);
+    /**
+     * Constructor
+     * @param capacityMax: the maxiumum passenger capacity for a car
+     * Set the max passenger capacity to the arraylist
+     */
+    public Car(int maxCapacity){
+        this.currentOnboard = new ArrayList<Passenger>(maxCapacity);
         
     }
 

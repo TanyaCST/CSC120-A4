@@ -4,8 +4,16 @@ public class Train {
     private Engine engine;
     private ArrayList<Car> carAttached = new ArrayList<Car>();
 
+    /**
+     * Constructor
+     * @param fuelType: the fuel type of engine
+     * @param fuelCapacity: the maxium amount of fuel an engine can contain
+     * @param nCars: number of cars attached to the train
+     * @param passengerCapacity: the max number of passengers on board
+     * 
+     * Initialize the `Engine` and `Car`s and store them
+     */
     public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity){
-        //initialize the `Engine` and `Car`s and store them
         this.engine = new Engine(fuelType, passengerCapacity);
 
         for(int index = 0; index < nCars; index ++){
@@ -26,7 +34,7 @@ public class Train {
     /**
      * Return the ith car attached to the train
      * @param i: the index of car attached to the train
-     * @return
+     * @return the ith car attached to the train
      */
     public Car getCar(int i){
         return carAttached.get(i);
@@ -36,7 +44,7 @@ public class Train {
 
     /**
      * Return the maximum total capacity across all `Car`s
-     * @return
+     * @return maximum total capacity across all `Car`s
      */
     public int getMaxCapacity(){
         int totalMaxCapa = 0;
@@ -50,7 +58,7 @@ public class Train {
 
     /**
      * Return the number of remaining open seats across all `Car`s
-     * @return
+     * @return num of remaining open seats across all `Car`s
      */
     public int seatsRemaining(){
         int totalSeatsRemain = 0;

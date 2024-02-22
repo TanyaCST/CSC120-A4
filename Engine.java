@@ -3,9 +3,14 @@ public class Engine {
     double maxLevel;
     FuelType fuelType;
 
-    public Engine(FuelType fuel, double levelInput){
+    /**
+     * 
+     * @param fuel: the type of fuel
+     * @param levelInput: the current level of fuel in engine
+     */
+    public Engine(FuelType fuel, double currentLevel){
         this.fuelType = fuel;
-        this.currentLevel = levelInput;
+        this.currentLevel = currentLevel;
 
     }
 
