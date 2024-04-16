@@ -75,8 +75,10 @@ public class Train {
      */
     public void printManifest(){
         for(int i = 0; i < carAttached.size(); i++){
+            System.out.println("Car ", i+1);
             this.carAttached.get(i).printManifest();
         }
         
     }
+
 }

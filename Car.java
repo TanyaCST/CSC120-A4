@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Car {
-    int maxCapacity = 50;
+    private int maxCapacity = 50;
     private ArrayList<Passenger> currentOnboard = new ArrayList<Passenger>();
 
     /**
@@ -39,16 +39,10 @@ public class Car {
      * @return T/F Is the operation successful?
      */
     public boolean addPassenger(Passenger p){
-        int seatsRemaing = seatsRemaining();
-        if(seatsRemaing > 0){
-            currentOnboard.add(p);
-            if(currentOnboard.contains(p)){
-                return true;
-            }
-    
-            else{
-                return false;
-            }
+        currentOnboard.add(p);
+
+        if(currentOnboard.contains(p)){
+            return true;
         }
         else{
             return false;
@@ -66,7 +60,6 @@ public class Car {
         if(currentOnboard.contains(p)){
             return false;
         }
-
         else{
             return true;
         }
@@ -80,8 +73,14 @@ public class Car {
             System.out.println("This car is EMPTY.");
         }
         else{
-            System.out.println(currentOnboard);
+            for(int i = 0; i < currentOnboard.size(); i += 3){
+                System.out.println(currentOnboard.get(i), currentOnboard.get(i+1), currentOnboard.get(i+2));
+            }
         }
+    }
+
+    public static void main(String[] args) {
+        Car carA = new Car(50);
     }
     
 

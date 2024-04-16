@@ -1,17 +1,42 @@
 public class Engine {
     private double currentLevel;
-    double maxLevel;
-    FuelType fuelType;
+    private double maxLevel;
+    private FuelType fuelType;
 
     /**
-     * 
+     * Constructor
      * @param fuel: the type of fuel
      * @param levelInput: the current level of fuel in engine
      */
-    public Engine(FuelType fuel, double currentLevel){
+    public Engine(FuelType fuel, double currentLevel, double maxLevel){
         this.fuelType = fuel;
         this.currentLevel = currentLevel;
+        this.maxLevel = maxLevel; 
 
+    }
+
+    /**
+     * Accessor
+     * @return current fuel level
+     */
+    public double getCurrentLevel(){
+        return currentLevel;
+    }
+
+    /**
+     * Accessor
+     * @return maxium fuel level
+     */
+    public double getMaxLevel(){
+        return maxLevel;
+    }
+
+    /**
+     * Accessor
+     * @return fueltype for the train
+     */
+    public FuelType getFuelType(){
+        return fuelType;
     }
 
     /**
@@ -31,15 +56,19 @@ public class Engine {
      * @return T/F: Is the current fuel level above 0?
      */
     public boolean go(){
-        this.currentLevel -= 10;
-
-        // print some useful information (e.g. remaining fuel level) if possible
-        if (currentLevel > 0) {
-            return(true);
+        if(this.currentLevel >= 10){
+            this.currentLevel -= 10;
+            if (currentLevel > 0) {
+                return(true);
+            }
+            else{
+                return(false);
+            }
         }
         else{
             return(false);
         }
+
     }
 
     public static void main(String[] args) {

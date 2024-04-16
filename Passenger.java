@@ -15,7 +15,7 @@ public class Passenger {
      * @param c the given car
      */
     public void boardCar(Car c){
-        if(c.addPassenger(this) == true){
+        if(seatsRemaining() > 0){
             c.addPassenger(this);
         }
     }
@@ -25,7 +25,7 @@ public class Passenger {
      * @param c the given car
      */
     public void getOffCar(Car c){
-        if(c.removePassenger(this) == true){
+        if(currentOnboard.contains(this)){
             c.removePassenger(this);
         }
     }
